@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Controle NFP",
+  "version": "1.0.0",
+  "description": "Controle de produtividade da Nota Fiscal Paulista",
+
+  "permissions": [
+    "storage"
+  ],
+
+  "host_permissions": [
+    "https://www.nfp.fazenda.sp.gov.br/*"
+  ],
+
+  "content_scripts": [
+  {
+    "matches": [
+      "https://www.nfp.fazenda.sp.gov.br/*"
+    ],
+    "js": [
+      "modules/utils.js",
+      "modules/storage.js",
+      "modules/api.js",
+      "modules/captura.js",
+      "modules/sucesso.js",
+      "modules/monitor.js",
+      "content.js"
+    ],
+    "run_at": "document_idle"
+  }
+],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Controle NFP"
+  }
+}

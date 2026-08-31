@@ -1,0 +1,1 @@
+console.log("CONTROLE NFP - Extensão carregada!");
